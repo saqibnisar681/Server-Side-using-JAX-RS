@@ -2,8 +2,10 @@ package org.saqibnisar.exercise_service.resources;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -18,6 +20,7 @@ import org.saqibnisar.exercise_service.repository.ActivityStub;
 
 @Path("activities")
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class ActivityResource {
 
 	private ActivityStub stub = new ActivityStub();
@@ -41,6 +44,8 @@ public class ActivityResource {
 		}
 		
 		return Response.ok().entity(act).build();
+		
+//		return stub.getActivity(activityID);
 	} 
 	
 	@Path("{activityID}/user")
@@ -70,6 +75,15 @@ public class ActivityResource {
 //		return stub.create(act); 
 //		
 //	}
+	
+	@Path("{activityID}")
+	@PUT
+	public Activity updateActivity(@PathParam("activityID") int activityID,Activity act) {
+		
+		return stub.updateActivity(activityID,act);
+		
+	}
+	
 	
 	@Path("{activityID}/user")
 	@POST

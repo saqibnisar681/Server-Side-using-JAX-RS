@@ -84,4 +84,18 @@ public class ActivityStub {
 		activities.add(act);
 		return act;
 	}
+
+	public Activity updateActivity(int activityID, Activity activity) {
+
+		for(Activity act : activities) {
+			 
+			if (act.getId() == activityID) {
+				act.setDesc(activity.getDesc());
+				act.setDuration(activity.getDuration());
+				activity.setId(activityID);
+				
+			}
+		}
+		return activity;
+	}
 }
