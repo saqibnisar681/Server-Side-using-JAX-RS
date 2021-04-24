@@ -7,6 +7,7 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.saqibnisar.exercise_service.model.Activity;
 
@@ -37,6 +38,16 @@ public class ActivityClient {
 		
 		return response;
 
+	}
+ 
+	public void delete(int i) {
+
+		WebTarget target = client.target("http://localhost:8081/exercise-service/webapi/");
+
+		Response response = target.path("activities/" + i).request(MediaType.APPLICATION_JSON).delete();
+	
+		if (response.getStatus() != 200)
+			throw new RuntimeException(response.getStatus() + ": there was an error on this server");
 	}
 
 }

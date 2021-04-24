@@ -98,4 +98,14 @@ public class ActivityStub {
 		}
 		return activity;
 	}
+
+	public void deleteActivity(int activityID) {
+
+		for (Activity act : activities) {
+			
+			if (act.getId() == activityID)
+				activities.remove(act);
+		}
+		
+	}
 }
