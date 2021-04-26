@@ -108,4 +108,15 @@ public class ActivityStub {
 		}
 		
 	}
+
+	public Activity searchActivity(String desc) {
+		
+		System.out.println(desc);
+		for (Activity act : activities) {
+			
+			if (act.getDesc().compareTo(desc) == 0)
+				return act;
+		}
+		return null;
+	}
 }

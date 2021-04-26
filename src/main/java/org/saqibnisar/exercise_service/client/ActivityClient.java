@@ -40,14 +40,14 @@ public class ActivityClient {
 
 	}
  
-	public void delete(int i) {
-
-		WebTarget target = client.target("http://localhost:8081/exercise-service/webapi/");
-
-		Response response = target.path("activities/" + i).request(MediaType.APPLICATION_JSON).delete();
-	
-		if (response.getStatus() != 200)
-			throw new RuntimeException(response.getStatus() + ": there was an error on this server");
-	}
+//	public void delete(int i) {
+//
+//		WebTarget target = client.target("http://localhost:8081/exercise-service/webapi/");
+//
+//		Response response = target.path("activities/" + i).request(MediaType.APPLICATION_JSON).delete();
+//	
+//		if (response.getStatus() != 200)
+//			throw new RuntimeException(response.getStatus() + ": there was an error on this server");
+//	}
 
 }

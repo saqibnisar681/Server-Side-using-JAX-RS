@@ -32,12 +32,12 @@ public class ActivityClientTest {
 		assertNotNull(act);
 	}
 	
-	@Test
-	public void test3() {
-		
-		ActivityClient client = new ActivityClient();
-		
-		client.delete(1);
-	}
+//	@Test
+//	public void test3() {
+//		
+//		ActivityClient client = new ActivityClient();
+//		
+//		client.delete(1);
+//	}
 
 }
